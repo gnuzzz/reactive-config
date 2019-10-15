@@ -72,9 +72,13 @@ lazy val examples = project
   .settings(
     name := "reactive-config-examples",
     libraryDependencies ++= Seq(
-      "io.circe"       %% "circe-generic"  % "0.9.3",
-      "ch.qos.logback" % "logback-classic" % "1.2.3",
-      "ch.qos.logback" % "logback-core"    % "1.2.3"
+      "io.circe"                      %% "circe-generic"         % "0.9.3",
+      "ch.qos.logback"                %  "logback-classic"       % "1.2.3",
+      "ch.qos.logback"                %  "logback-core"          % "1.2.3",
+      "com.fasterxml.jackson.core"    %  "jackson-core"          % "2.10.0",
+      "com.fasterxml.jackson.core"    %  "jackson-annotations"   % "2.10.0",
+      "com.fasterxml.jackson.core"    %  "jackson-databind"      % "2.10.0",
+      "com.fasterxml.jackson.module"  %% "jackson-module-scala"  % "2.10.0"
     )
   )
 
