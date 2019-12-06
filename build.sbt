@@ -65,9 +65,22 @@ lazy val typesafe = project
     )
   )
 
+lazy val java_adapter = project
+  .in(file("adapter"))
+  .dependsOn(core, circe, typesafe)
+  .settings(commonSettings)
+  .settings(
+    name := "reactive-config-java-adapter",
+    libraryDependencies ++= Seq(
+      "org.assertj"       % "assertj-core"           % "3.11.1",
+      "org.junit.jupiter" % "junit-jupiter-api"      % "5.0.3",
+      "org.junit.jupiter" % "junit-jupiter-engine"   % "5.0.3"
+    )
+  )
+
 lazy val examples = project
   .in(file("examples"))
-  .dependsOn(core, circe, typesafe)
+  .dependsOn(core, circe, typesafe, java_adapter)
   .settings(commonSettings)
   .settings(
     name := "reactive-config-examples",
